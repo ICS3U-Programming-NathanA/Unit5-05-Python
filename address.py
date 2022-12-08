@@ -5,7 +5,9 @@
 # This program formats the users address it then displays it
 
 
-def address_format(full_name, street_num, street_name, city, province, postal_code, user_apartment=None):
+def address_format(
+    full_name, street_num, street_name, city, province, postal_code, user_apartment=None
+):
     # If the user entered "y" for apartment
     if user_apartment != None:
         address = (
@@ -25,7 +27,19 @@ def address_format(full_name, street_num, street_name, city, province, postal_co
         )
     # Otherwise set the address without the apartment number
     else:
-        address = full_name + "\n" + street_num + " " + street_name + "\n" + city + " " + province + " " + postal_code
+        address = (
+            full_name
+            + "\n"
+            + street_num
+            + " "
+            + street_name
+            + "\n"
+            + city
+            + " "
+            + province
+            + " "
+            + postal_code
+        )
     return address
 
 
@@ -68,7 +82,15 @@ def main():
     user_postal_code = input("Enter your postal code: ")
 
     # call address_format
-    address = address_format(user_full_name,user_street_num,user_street_name,user_city,user_province,user_postal_code,user_apartment)
+    address = address_format(
+        user_full_name,
+        user_street_num,
+        user_street_name,
+        user_city,
+        user_province,
+        user_postal_code,
+        user_apartment,
+    )
 
     # prints the address
     print("Your Canadian Mailing address is:\n")
